@@ -28,7 +28,7 @@ class FileRollerExtension(GObject.GObject, Nautilus.MenuProvider):
         files = args[-1]
         item = Nautilus.MenuItem(
             name='FileRollerCompress',
-            label='Compress (File Roller)',
+            label='Compress… (File Roller)',
             tip='Compress the selected files with File Roller'
         )
         item.connect('activate', self.compress_with_file_roller, files)
