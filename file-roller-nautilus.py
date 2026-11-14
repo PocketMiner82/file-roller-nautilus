@@ -6,7 +6,7 @@
 # This script is released to the public domain.
 
 from gi.repository import Nautilus, GObject
-from subprocess import call
+from subprocess import Popen
 
 
 class FileRollerExtension(GObject.GObject, Nautilus.MenuProvider):
@@ -22,7 +22,7 @@ class FileRollerExtension(GObject.GObject, Nautilus.MenuProvider):
                 paths.append(path)
 
         if paths:
-            call(['file-roller', '--add', *paths])
+            Popen(['file-roller', '--add', *paths])
 
     def get_file_items(self, *args):
         files = args[-1]
